@@ -1,0 +1,951 @@
+/* 기본 리셋 */
+@font-face {
+    font-family: 'Chosunilbo_myungjo';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+#wrap{
+    min-width: 1400px;
+    overflow: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    color: #504943;
+    font-family: "Abhaya Libre", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 22px;
+    background-color: #EDECE8;
+}
+
+.top {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    display: none;
+    z-index: 8;
+}
+
+#PRODUCT, #BRAND,
+#event, #COLLECTION {
+    scroll-margin-top: 120px;
+    /* 헤더보다 살짝 여유 있게 */
+}
+
+/* header */
+    #head {
+        /* width: 100%; */
+        margin: 0px auto;
+        height: 80px;
+        background-color: #41362e60;
+        color: #EDECE8;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+    }
+    .header_wrap{
+        width: 1320px;
+        margin: 0px auto;
+        position: relative;
+    }
+    .gnb1 {
+        display: flex;
+        float: left;
+    }
+
+    .gnb1>li>a {
+        font-size: 21px;
+        display: block;
+        margin-top: 28px;
+        margin: 28px 60px;
+        letter-spacing: 1.5px;
+    }
+    .gnb1>li:hover{
+        color: #41362e;
+        font-weight: 600;
+
+    }
+    .gnb2 {
+        display: flex;
+        float: right;
+        margin-right: 50px;
+    }
+
+    .gnb2>li>a {
+        font-size: 21px;
+        display: block;
+        margin-top: 28px;
+        margin: 28px 60px;
+        letter-spacing: 1.5px;
+    }
+    .gnb2>li:hover{
+        color: #41362e;
+        font-weight: 600;
+
+    }
+    .logo{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -100.5px
+    }
+    .logo img {
+        display: block;
+        margin-top: 20px;
+    
+    }
+    .icon {
+        position: absolute;
+        top: 20px;
+        right: -150px;
+        display: flex;
+    }
+
+    .icon img {
+        display:block;
+        margin: 10px;
+    }
+
+/* main */
+    .swiper {
+        width: 100%;
+        height: 100%;
+    }
+
+    .mySwiper .swiper-slide {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mySwiper .swiper-slide img {
+        display: block;
+        width: 1920px;
+        height: 900px;
+        margin: 0px auto;
+        text-align: center;
+        position: relative;
+    }
+    /* (추가) 상품 스와이퍼 전용: 전역 영향 제거 */
+    .js-swiper .swiper-slide {
+    display:block;      /* flex 해제 */
+    width:auto;         /* auto 너비로 계산 */
+    }
+    .js-swiper .swiper-wrapper {
+    align-items:stretch;
+    }
+    .main_wrap {
+        width: 100%;
+        margin: 0px auto;
+        position: absolute;
+        top: 680px;
+        left: 0px;
+    }
+
+    .main_wrap h1 {
+        font-family: "Aboreto", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        color: #EDECE8;
+        font-size: 40PX;
+        line-height: 143%;
+    }
+
+    .main_wrap p {
+        font-family: "Aboreto", system-ui;
+        font-weight: 400;
+        color: #EDECE8;
+        opacity: 50%;
+        font-size: 26PX;
+        line-height: 143%;
+    }
+
+    .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+        background: #D9D9D9;
+    }
+
+    .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+    }
+
+/* PRODUCT  */
+    #PRODUCT {
+        width: 1320px;
+        margin: 200px auto 0;
+        text-align: center
+    }
+
+    #PRODUCT h1 {
+        font-family: Abhaya Libre, serif;
+        font-size: 45px;
+        letter-spacing: 2px;
+        color: #504943;
+        margin-bottom: 10px;
+    }
+    
+/* 탭 */
+.tab_menu {
+      width: 100%;
+        height: 38px;
+        display: flex;
+        justify-content: center;
+        position: relative
+}
+.tab_menu>li {
+        width: 90px;
+        margin: 0px 15px;
+    }
+.tab_menu>li>a {
+     display: block;
+        line-height: 38px;
+        padding: 0 20px;
+        border-radius: 30px;
+        background: #D7D7D7;
+        font-size: 25px;
+        font-family: Abhaya Libre;
+}
+.tab_menu>li>a:hover,
+    .tab_menu>li.on>a {
+        background: #504943;
+        color: #EDECE8;
+    }
+
+
+.tab_content {
+    display: none;
+}
+
+.tab_content.on {
+    display: block;
+}
+
+/* 레이아웃 */
+.product {
+    width: 100%;
+    margin: 35px 0 0;
+}
+
+.product .mySwiper1,
+.product .mySwiper2 {
+    width: 1320px;
+    margin: 0 auto;
+    /* 가운데 정렬 */
+}
+
+/* 카드 */
+.card {
+    position: relative;
+    /* 커버 */
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.img {
+    width: 420px;
+    height: 550px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.img img {
+    display: block;
+    width: 450px;
+    height: auto;
+}
+.card{
+    width: 420px;
+    
+}
+/* 중요: 이미지 표시 */
+.card:hover img {
+    transform: scale(1.02);
+    transition: transform .3s;
+}
+
+/* 제품 텍스트 */
+.PRODUCT_text {
+    width: 383px;
+    margin: 20px 0 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    color: #737373;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.PRODUCT_text p {
+    font-size: 22px;
+}
+
+/* 커버(hover) */
+.cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 420px;
+    height: 550px;
+    border-radius: 30px;
+    background: rgba(80, 73, 67, .6);
+    color: #fff;
+    opacity: 0;
+    transition: opacity .4s ease;
+    text-align: center;
+}
+.cover img{
+width: 38px;
+height: 38px;
+margin-top: 200px;
+}
+.cover_title {
+    font-family: "Aboreto", system-ui;
+    font-weight: 300;
+    margin-top: 25px;
+    font-size: 22px;
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+}
+
+.cover_sub {
+    font-family: 'Chosunilbo_myungjo', serif;
+    line-height: 22px;
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.card:hover .cover {
+    opacity: 1;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    content: "";
+    display: none;
+}
+
+.product {
+  position: relative; /* 기준 */
+}
+
+.button-wrapper {
+  position: absolute; 
+  top: 45%; 
+  left: 0; 
+  width: 100%;
+  transform: translateY(-50%);
+  z-index: 10; /* 카드 위로 */
+  pointer-events: none; /* 버튼 외 영역은 클릭 안 막히게 */
+}
+
+.button-wrapper .swiper-button-prev,
+.button-wrapper .swiper-button-next {
+  pointer-events: auto; /* 버튼만 클릭 가능 */
+  position: absolute;
+  top: 40%;
+  transform: translateY(-80%);
+}
+
+.button-wrapper .swiper-button-prev { 
+    left: -10px; 
+}
+.button-wrapper .swiper-button-next {
+     right: -10px; 
+}
+
+/* 스크롤바 여백 */
+.swiper-scrollbar {
+     background: #D9D9D9;
+    height: 8px;
+    position: relative !important;
+  margin-top: 90px;
+}
+/* 위에 움직이는 부분 색상 */
+.swiper-scrollbar-drag {
+  background: #A8A6A6;      
+  /* 진한 회색 (바 색상) */
+  border-radius: 4px;
+  /* 스크롤바 길이 조정 */
+    /* width: 400px !important;
+     margin-left: 140px; */
+}
+
+/* 반응형 */
+@media (max-width: 1200px) {
+
+    .product .mySwiper1,
+    .product .mySwiper2 {
+        width: 960px;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .product .mySwiper1,
+    .product .mySwiper2 {
+        width: 720px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .product .mySwiper1,
+    .product .mySwiper2 {
+        width: calc(100% - 32px);
+    }
+
+    .img {
+        width: 100%;
+        height: auto;
+    }
+}
+/* .about_us */
+    .about_us {
+        display: flex;
+        white-space: nowrap;
+        overflow: hidden;
+        transition: 10s;
+        font-size: 180px;
+        font-weight: 800;
+        
+    }
+
+    @keyframes textLoop {
+        0% {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        100% {
+            -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+        }
+    }
+
+    .about_us p{
+        font-family: "Aboreto", system-ui;
+        color: #41362E;
+        font-size: 150px;
+        font-weight: 500;
+        animation: textLoop 50s linear infinite;
+        padding-right: 20px;
+        margin-top: 200px;
+    }
+
+/* BRANDD STORY */
+    #BRAND {
+        width: 1320px;
+        margin: 0px auto;
+        margin-top: 200px;
+        margin-bottom: 190px;
+    }
+
+    #BRAND h2 {
+        text-align: center;
+        letter-spacing: 2px;
+        font-size: 45px;
+    }
+
+    /* 자간 넓히기 */
+    .more {
+        width: 1320px;
+        margin-top: 40px;
+        margin-bottom: 18px;
+        text-align: right;
+    }
+
+
+    .BRAND_wrap {
+        width: 1320px;
+        margin: 0px auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .BRAND_img_box {
+        width: 660px;
+        height: 800px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .brandstory_img {
+        position: relative;
+        transition: all 0.3s;
+        overflow: hidden;    
+    }
+
+    /* 이미지 전환 */
+
+
+    .brandstory_img:hover img {
+        transform: scale(1.12);
+        transition: all 0.3s;
+    }
+
+    .BRAND_text_box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+
+    .BRAND_text_box img {
+        margin-top: 316px;
+    }
+
+    .main_text {
+        color: #EDECE8;
+        font-size: 30px;
+        font-family: 'Chosunilbo_myungjo', serif;
+        margin-top: 27px;
+    }
+
+    .sub_text {
+        font-size: 22px;
+        font-weight: 300;
+        font-family: "Noto Sans KR", sans-serif;
+        color: #B5A89B;
+        margin-top: 36px;
+    }
+
+    /* 텍스트 컬러만 바꿔주기 */
+    .main_text2 {
+        color: #41362E;
+        font-size: 30px;
+        font-family: 'Chosunilbo_myungjo', serif;
+        margin-top: 27px;
+    }
+
+    .sub_text2 {
+        font-size: 22px;
+        font-weight: 300;
+        font-family: "Noto Sans KR", sans-serif;
+        color: #41362E;
+        margin-top: 36px;
+    }
+
+/*vedio  */
+    #we {
+        width: 1320px;
+        margin: 0px auto;
+        text-align: center;
+        margin-bottom: 67px;
+    }
+
+    #we h2 {
+        font-family: "Abhaya Libre", serif;
+        font-size: 45px;
+        letter-spacing: 2px;
+    }
+
+    .line {
+        margin: 0px auto;
+        width: 2px;
+        height: 80px;
+        background-color: #555555;
+        margin-top: 5px;
+        margin-bottom: 60px;
+    }
+
+    #we p {
+        margin-top: 25px;
+        margin-bottom: 67px;
+        font-family: ChosunilboNM;
+        font-size: 26px;
+        line-height: 36px;
+    }
+
+    .vedio {
+        width: 1280px;
+        margin: 0px auto;
+        height: 720px;
+        overflow: hidden;
+        margin-bottom: 200px;
+    }
+
+    .vedio video {
+        margin: 0px auto;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+/* COLLECTION */
+
+    #COLLECTION {
+        width: 1920px;
+        margin: 0px auto;
+        overflow: hidden;
+    }
+
+    #COLLECTION h2 {
+        margin-bottom: 60px;
+        text-align: center;
+        font-size: 45px;
+        font-family: "Abhaya Libre", serif;
+        letter-spacing: 2px;
+    }
+
+    .COLLECTION_wrap {
+        display: inline-flex;
+        justify-content: center;
+        margin-bottom: 200px;
+        animation: slideLeft 35s linear infinite
+    }
+
+    @keyframes slideLeft {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    /* 흘러가는 */
+
+    .COLLECTION_wrap li {
+        position: relative;
+        width: 300px;
+        height: 360px;
+        border-radius: 30px;
+        margin: 0px 20px;
+        box-shadow: 5px 6px 5px #0000003a;
+    }
+
+    .COLLECTION_wrap li .card-inner {
+        width: 100%;
+        height: 100%;
+        border-radius: 30px;
+        overflow: hidden;
+    }
+
+    .COLLECTION_wrap>.down {
+        margin-top: 20px;
+    }
+
+    .COLLECTION_wrap li:hover .COLLECTION_cover {
+        opacity: 1;
+        transition: all 0.3s;
+    }
+
+    .COLLECTION_cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background-color: #41362e75;
+        border-radius: 30px;
+        color: #fff;
+        opacity: 0;
+    }
+
+    .COLLECTION_title {
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 200;
+        font-size: 12px;
+        margin-bottom: 18px;
+        letter-spacing: 0.5px;
+        padding-top: 150px;
+    }
+
+    .COLLECTION_title span {
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 300;
+        font-size: 18px;
+    }
+
+    .COLLECTION_sub {
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 200;
+        line-height: 24px;
+        font-size: 16px;
+    }
+
+/* .banner */
+    #banner {
+        height: 350px;
+        background: url(./banner.png) no-repeat center;
+    }
+
+    #banner p {
+        text-align: center;
+        font-family: 'Chosunilbo_myungjo', serif;
+        font-size: 35px;
+        color: #fff;
+        padding-top: 151px;
+    }
+
+/* event */
+    #event {
+        width: 1320px;
+        margin: 0px auto;
+    }
+
+    #event h2 {
+        margin-top: 200px;
+        margin-bottom: 60px;
+        text-align: center;
+        font-size: 45px;
+        font-family: "Abhaya Libre", serif;
+        letter-spacing: 2px;
+    }
+
+    .event_bg {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .event_bg>li {
+        width: 320px;
+        height: 367px;
+        background-color: #E5E4DF;
+        border-radius: 16px;
+        border: 1px solid #C9C9C9;
+        overflow: hidden;
+        position: relative;
+
+    }
+
+    .event_bg>li:hover .event_cover {
+        transform: translateY(0px);
+        transition: all 0.8s;
+        opacity: 1;
+    }
+
+    .event_img {
+        text-align: center;
+        margin-top: 10px;
+        position: relative;
+    }
+    
+    .event_img>p {
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        color: #737373;
+        margin-top: 13px;
+        overflow: hidden;
+    }
+
+    .day {
+        width: 76px;
+        height: 30px;
+        background-color: #EDECE8;
+        border-radius: 15px;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+
+    }
+
+    .day p {
+        padding-top: 2px;
+        text-align: center;
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        color: #737373;
+    }
+
+    /* 호버시 커버 */
+    .event_cover {
+        width: 320px;
+        height: 367px;
+        background-color: #41362e8c;
+        border-radius: 16px;
+        text-align: center;
+        color: #EDECE8;
+        transform: translateY(367px);
+        transition: all 0.5s;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+
+    .event_cover p {
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+
+    }
+
+    .event_cover .title {
+        padding-top: 130px;
+        line-height: 24px;
+        font-weight: 300;
+        margin-bottom: 44px;
+    }
+
+    .event_cover .down {
+        margin-bottom: 74px;
+        font-weight: 400;
+    }
+
+    .event_img .on {
+        position: relative;
+        z-index: 2;
+        color: #737373;
+    }
+
+    .event_bg>li:hover .on {
+        color: #fff;
+        z-index: 2;
+    }
+
+/* MAGAZINE */
+    #MAGAZINE {
+        width: 1320px;
+        margin: 0px auto;
+        margin-bottom: 250px;
+    }
+
+    #MAGAZINE h2 {
+        margin-top: 200px;
+        margin-bottom: 63px;
+        text-align: center;
+        font-size: 45px;
+        font-family: "Abhaya Libre", serif;
+        letter-spacing: 2px;
+    }
+
+    .MAGAZINE_wrap ul {
+        display: flex;
+        justify-content: space-between;
+        font-family: "Aboreto", system-ui;
+        font-weight: 400;
+        color: #41362E;
+        line-height: 115%;
+    }
+
+    .MAGAZINE_img {
+        width: 650px;
+        height: 800px;
+        position: relative;
+    }
+
+    .MAGAZINE_text {
+        width: 650px;
+        position: absolute;
+        top: 673px;
+        left: 40px;
+        z-index: 2;
+    }
+
+    .MAGAZINE_wrap ul .span {
+        margin-top: 5px;
+        font-size: 30px;
+    }
+
+    .MAGAZINE_wrap .small {
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        margin-top: 6px;
+    }
+
+    /* cover */
+    .cloudy {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        background: url(./plus-circle.png) no-repeat bottom 45px right 70px;
+        opacity: 0;
+        transition: all 0.5s;
+    }
+
+    .MAGAZINE_img:hover .cloudy {
+        opacity: 1;
+    }
+
+/* footer */
+    #footer {
+        text-align: center;
+        height: 500px;
+        margin: 0px auto;
+        background-color: #41362E;
+        font-family: "Aboreto", system-ui;
+        font-size: 18px;
+        color: #EDECE8;
+        box-sizing: border-box;
+    }
+
+    .footer_wrap {
+        width: 1320px;
+        margin: 0px auto;
+        position: relative;
+    }
+
+    #footer h1 {
+        padding-top: center;
+        font-size: 140px;
+        font-weight: 200;
+        letter-spacing: -5px;
+    }
+
+    .footer_sub {
+        font-size: 16px;
+        line-height: 34px;
+        margin-top: 60px;
+        letter-spacing: 1px;
+
+    }
+
+    .sns_icon {
+        display: flex;
+        position: absolute;
+        top: 220px;
+        right: 0px;
+        align-items: center;
+        background-color: #41362E;
+    }
+
+    .sns_icon li {
+        display: block;
+        margin: 0px 10px;
+    }
+
+    .nav {
+        font-weight: 300;
+        font-family: "Noto Sans KR", sans-serif;
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .nav li {
+        display: block;
+        margin: 47px 40px;
+    }
